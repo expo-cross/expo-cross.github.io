@@ -1,0 +1,176 @@
+<html>
+<head>
+<style>
+#sun{
+height:300px;
+width:100%;
+background-color:grey;
+padding-bottom:2%;
+ background-image: linear-gradient(45deg,#afab99,#84837d 60%, #ccc9bb);
+}
+#sun .slide{
+float:left;
+margin:3%;
+}
+
+
+
+.slide{
+   background-image: linear-gradient(-45deg,#1a203f,#84837d 30%, #454649); 
+   padding-top:20px;
+   padding-left:20px;
+   width:300px;
+   height:250px;
+   background-color:red;
+   transform:skew(10deg,0deg);
+   border-radius:20px;
+  transition:width 1s,transform 1s;
+  box-shadow: -10px 10px 30px black;
+  
+   }
+  .slide:hover{
+  
+  transform:rotatey(20deg);
+  box-shadow: -10px 10px 20px black;
+  transition:width 1s,transform 0.5s;
+  background-color: red;
+  
+  }
+   @keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;transform:skew(0deg,0deg);}
+}
+
+#bl{
+margin-top:7%;
+    float:left;
+	width: 0;
+	border-top: 50px solid transparent;
+	border-right: 50px solid #555;
+	border-bottom: 50px solid transparent;
+	box-shadow: 10px 10px 30px black;
+	background-color:#afab99;
+	
+}
+#br {
+float:right;
+margin-top:7%;
+	border-top: 50px solid transparent;
+	border-left: 50px solid #555;
+	border-bottom: 50px solid transparent;
+	box-shadow: -10px 10px 30px black;
+}
+#br:hover
+{
+	box-shadow: -10px 10px 10px black;
+	
+}
+#bl:hover
+{
+	box-shadow: 10px 10px 10px black;
+}
+.name{
+text-shadow: 2px 2px 2px #afab99;
+padding:20px 20px;
+font-family:Serif;
+font-size:20px;
+}
+.desc{
+text-shadow: 2px 2px 2px #afab99;
+padding:20px 20px;
+padding:20px 20px;
+font-family:Serif;
+font-size:20px;
+}
+#but{
+text-shadow: 2px 2px 20px #ffffff; 
+border-radius:20%;
+padding:3px;
+margin-right:2px;
+margin-top:3px;
+box-shadow: -10px 10px 30px black; 
+float:right;	
+   width: 80px;
+	height: 25px;
+	transform: skew(19deg);
+	background: #555;
+}
+#but:hover{
+cursor: grab;
+background-color:#afab99;
+}
+#but:active{
+  transition:0.1s;
+  box-shadow: -10px 10px 30px #afab99; 
+}
+</style>
+<script src="jquery-3.2.1.min.js">
+</script>
+
+</head>
+<body>
+<input type="button" id="button" value="create"/>
+<h1 id="mo">sudheer</h1>
+
+<div id="sun">
+
+</div>
+<script>
+var events=new Array();
+var f=0;
+var c=0;
+
+
+$(document ).ready(function(){
+     var f=0;
+	 var c=5;
+	var text="<div id=\"bl\"/><div>";
+	for(var i=0;i<5;i++)
+	{events.push({id:i,name:"Event "+i.toString(),description:"This is Desc"});c++;}
+	
+	for(var i=0;i<3;i++)
+	{
+	text=text+"<div class=\"slide\" id="+i.toString()+"> <div class=\"name\">name:<b> "+events[i].name+"</b></div><br/><div class=\"desc\">description:<b> "+events[i].description+"</b></div><div id=\"but\">Register</div></div>";
+	}	
+	text+="<div id=\"br\"/><div>";
+	$("#sun").html(text);
+	$("#bl").click(function(){
+		alert(f);
+		if(f-1>=0)
+			{ 
+			var text="<div id=\"bl\"/><div>";
+			f--;
+			for(var i=f;i<f+3;i++)
+			{
+	     		text=text+"<div class=\"slide\" id="+i.toString()+"> <div class=\"name\">name:<b> "+events[i].name+"</b></div><br/><div class=\"desc\">description:<b> "+events[i].description+"</b></div><div id=\"but\">Register</div></div>";
+			}	
+			text+="<div id=\"br\"></div>";
+		$("#sun").html(text);
+		alert(f);
+		}
+	});
+	
+	$("#br").click(function(e){
+	    
+		if(c>3){
+			if(f+3>events.length)
+			{
+				f=0;
+			}
+			var text="<div id=\"bl\"/><div>";
+			f++;
+			for(var i=f;i<f+3;i++)
+			{
+			text=text+"<div class=\"slide\" id="+i.toString()+"> <div class=\"name\">name:<b> "+events[i].name+"</b></div><br/><div class=\"desc\">description:<b> "+events[i].description+"</b></div><div id=\"but\">Register</div></div>";
+			}	
+			text+="<div id=\"br\"></div>";
+			
+		    $("#sun").html(text);
+	       }
+		   
+	});	
+
+});
+</script>
+</body>
+</html>
