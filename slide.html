@@ -1,0 +1,66 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="fullpage.css" />
+<style>
+.in-slide{
+height:80%;
+width:80%;
+margin-left:10%;
+border-radius:10%;
+background-color:red;
+transform:skew(10deg,0deg);
+pdding:50%;
+background-image: linear-gradient(45deg,#353432,#5b4636,#9b938d 60%,#afab99);
+box-shadow: -10px 10px 30px black;
+}
+.name {
+padding-top:10%;
+padding-left:10%;
+align:center;
+width:100%;
+font-size:30px;
+text-shadow: 2px 2px 30px #ffffff; 
+}
+
+.in-slide:hover{
+box-shadow: -10px 10px 20px black;
+}
+@keyframes ani{
+from{transform:skew(10deg,0deg);}
+to{transform:skew(0deg,0deg);}
+}
+</style>
+</head>
+<body>
+<!--event slides-->
+
+<!-- Fullpage slides -->
+<div id="fullpage">
+    <div class="section"></div>
+	<div class="section">
+	<div class="slide"><div class="in-slide"><div class="name">Event name:</div><div class="desc">Description:</div><div class="time">time:</div><div class="date">Date:</div><div class="reg">Register:</div></div></div>
+	<div class="slide"><div class="in-slide"></div></div>
+	<div class="slide"><div class="in-slide"></div></div>
+	<div class="slide"><div class="in-slide"></div></div>
+	</div>
+	<div class="section"></div>
+	<div class="section"></div>
+	<div class="section"></div>
+	<div class="section"></div>
+</div>
+<!-- fullpage object creation script-->
+<script type="text/javascript" src="fullpage.js"></script>
+<script type="text/javascript">
+
+var myFullpage = new fullpage('#fullpage', {
+        sectionsColor: ['#292833', '#d6c1b1', '#7BAABE', '#5ea58d', '#ccddff'],
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+        menu: '#menu',
+        lazyLoad: true,
+		autoScrolling:true,
+    });
+</script>
+</body>
+
+</html>
