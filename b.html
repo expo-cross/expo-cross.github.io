@@ -1,0 +1,134 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="fullpage.css" />
+<style>
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+</style>
+
+<style>
+html{
+background-image:url(slide.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+}
+.out{
+height:80%;
+width:80%;
+margin-left:10%;
+border-radius:4%;
+background:linear-gradient(45deg,#725922,#493a19 30%,#634c1b,#9b782d 10%,#4f330b);
+box-shadow: -10px 50px 50px black;
+}
+.in-slide{
+color:white;
+height:90%;
+width:96%;
+border: 20px solid transparent;
+margin-right:100px;
+font-family:'Coming Soon';
+background-image: url(bb2-6.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+border-radius:4%;
+}
+.out:hover{
+box-shadow: -10px 20px 30px black;
+}
+.name {
+text-align: center;
+padding-top:7%;
+align:center;
+width:100%;
+font-size:30px;
+padding-bottom:40px;
+text-shadow: 2px 2px 30px #000000; 
+}
+.desc {
+float:left;
+padding-top:2%;
+padding-left:7%;
+padding-right:2%;
+height:75%;
+font-size:30px;
+width:60%;
+text-shadow: 2px 2px 30px #000000;
+}
+.time{
+float:left;
+font-size:30px;
+height:20%;
+width:30%;
+text-shadow: 2px 2px 30px #000000; 
+}
+.date{
+float:left;
+font-size:30px;
+height:20%;
+width:30%;
+text-shadow: 2px 2px 30px #000000; 
+
+}
+.reg{
+
+margin-left:5%;
+font-size:40px;	
+text-shadow: 2px 2px 30px #000000; 
+float:left;
+}
+.reg:hover{
+font-size:45px;	
+text-shadow: 10px 10px 20px #000000; 
+}
+.yr{
+font-size:30px;	
+text-shadow: 2px 2px 30px #000000; 
+float:right;
+margin-right:20%;
+margin-bottom:5%;
+}
+a:link {
+  text-decoration: none;
+  color:white;
+}
+@keyframes ani{
+from{transform:skew(10deg,0deg);}
+to{transform:skew(0deg,0deg);}
+}
+</style>
+</head>
+<body>
+<!--event slides-->
+
+<!-- Fullpage slides -->
+<div id="fullpage">
+    <div class="section"></div>
+	<div class="section">
+	<div class="slide"><div class="out"><div class="in-slide"><div class="name">Event name:</div><div class="yr">YR: II</div><div class="desc">Description:</div><div class="time">time:</div><div class="date">Date:</div><div class="reg"><a href="www.google.com">Register . . !</a></div></div></div></div>
+	<div class="slide"><div class="out"><div class="in-slide"><div class="name">Event name:</div><div class="yr">YR: II</div><div class="desc">Description:</div><div class="time">time:</div><div class="date">Date:</div><div class="reg"><a href="www.google.com">Register . . !</a></div></div></div></div>
+	<div class="slide"><div class="out"><div class="in-slide"><div class="name">Event name:</div><div class="yr">YR: II</div><div class="desc">Description:</div><div class="time">time:</div><div class="date">Date:</div><div class="reg"><a href="www.google.com">Register . . !</a></div></div></div></div>
+	<div class="slide"><div class="out"><div class="in-slide"><div class="name">Event name:</div><div class="yr">YR: II</div><div class="desc">Description:</div><div class="time">time:</div><div class="date">Date:</div><div class="reg"><a href="www.google.com">Register . . !</a></div></div></div></div>
+	<div class="slide"><div class="out"><div class="in-slide"><div class="name">Event name:</div><div class="yr">YR: II</div><div class="desc">Description:</div><div class="time">time:</div><div class="date">Date:</div><div class="reg"><a href="www.google.com">Register . . !</a></div></div></div></div>
+	<div class="slide"><div class="out"><div class="in-slide"><div class="name">Event name:</div><div class="yr">YR: II</div><div class="desc">Description:</div><div class="time">time:</div><div class="date">Date:</div><div class="reg"><a href="www.google.com">Register . . !</a></div></div></div></div>
+	
+	</div>
+	<div class="section"></div>
+	<div class="section"></div>
+	<div class="section"></div>
+	<div class="section"></div>
+</div>
+<!-- fullpage object creation script-->
+<script type="text/javascript" src="fullpage.js"></script>
+<script type="text/javascript">
+
+var myFullpage = new fullpage('#fullpage', {
+        sectionsColor: ['#292833', , '#7BAABE', '#5ea58d', '#ccddff'],
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+        menu: '#menu',
+        lazyLoad: true,
+		autoScrolling:true,
+    });
+</script>
+</body>
+
+</html>
